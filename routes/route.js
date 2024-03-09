@@ -4,7 +4,10 @@ import { createSchedule } from '../controllers/controller.js';
 
 const router = express.Router();
 
-router.get('/createSchedule', createSchedule);
+router.post('/createSchedule', createSchedule);
+router.get('/', (req, res) => {
+   res.status(200).json('WELCOME');
+})
 
 
 

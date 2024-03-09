@@ -1,13 +1,30 @@
 import { Schema, model } from 'mongoose';
 
 const schema = new Schema({
-   time: {
+   firstName: {
       type: 'string',
       required: true,
    },
-   date: {
+
+   lastName: {
       type: 'string',
       required: true,
+   },
+   dogBreed: {
+      type: 'string',
+      required: true,
+   },
+   session: {
+      type: [{
+         time: {
+            type: 'string',
+            required: true,
+         },
+         date: {
+            type: 'string',
+            required: true,
+         }
+      }]
    }
 }, { timestamps: true });
 
