@@ -8,7 +8,7 @@ router.post('/createSchedule', createSchedule);
 
 router.get('/schedules', getAllSchedules)
 
-router.get('/', (req, res) => {
+router.get('/welcome', (req, res) => {
    res.status(200).json('WELCOME');
 })
 

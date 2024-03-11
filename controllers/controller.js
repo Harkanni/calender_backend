@@ -4,6 +4,18 @@ export const createSchedule = async (req, res) => {
   try {
     const { firstName, lastName, address, dogBreed, session } = req.body;
 
+
+    if (!firstName || !lastName || !dogBreed) {
+      return res.status(400).json({ success: false, error: 'Invalid user information' });
+    }
+
+    // Validate sessionData
+    const isValidSession = sessionData.some(session => session.date && session.time);
+
+    if (!isValidSession) {
+      return res.status(400).json({ success: false, error: 'Invalid session data' });
+    }
+
     // Create a new Session instance with the received data
     const newSession = new DB_model({
       firstName,
