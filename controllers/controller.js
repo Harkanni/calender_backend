@@ -10,7 +10,7 @@ export const createSchedule = async (req, res) => {
     }
 
     // Validate sessionData
-    const isValidSession = sessionData.some(session => session.date && session.time);
+    const isValidSession = session.some(session => session.date && session.time);
 
     if (!isValidSession) {
       return res.status(400).json({ success: false, error: 'Invalid session data' });
