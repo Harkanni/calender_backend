@@ -2,7 +2,7 @@ import DB_model from '../models/model.js';
 
 export const createSchedule = async (req, res) => {
   try {
-    const { firstName, lastName, address, dogBreed, session } = req.body;
+    const { firstName, lastName, email, address, dogBreed, session } = req.body;
 
     if (!firstName || !lastName || !dogBreed) {
       return res
@@ -25,6 +25,7 @@ export const createSchedule = async (req, res) => {
     const newSession = new DB_model({
       firstName,
       lastName,
+      email,
       address,
       dogBreed,
       session

@@ -10,6 +10,10 @@ const schema = new Schema({
       type: 'string',
       required: true,
    },
+   email: {
+      type: 'string',
+      required: true,
+   },
    dogBreed: {
       type: 'string',
       required: true,
