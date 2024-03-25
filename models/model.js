@@ -14,6 +14,10 @@ const schema = new Schema({
       type: 'string',
       required: true,
    },
+   address: {
+      type: 'string',
+      required: false,
+   },
    dogBreed: {
       type: 'string',
       required: true,
