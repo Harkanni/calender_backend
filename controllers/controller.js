@@ -63,7 +63,7 @@ export const getAllSchedules = async (req, res) => {
     const totalPages = Math.ceil(schedules.length / perPage);
 
     // Send the paginated schedules and total pages as JSON response
-    res.status(200).json({succes: true, schedules: paginatedSchedules, totalPages });
+    res.status(200).json({succes: true, schedules: paginatedSchedules, totalPages, totalClients: schedules.length });
 
    //  res.status(200).json({ success: true, schedules: schedules });
 
