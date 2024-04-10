@@ -5,6 +5,8 @@ import router from './routes/route.js';
 import cors from 'cors';
 
 const app = express();
+app.use(cors());
+app.use(express.json());
 dotenv.config();
 
 
@@ -14,6 +16,10 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 
 app.use('/api/v1/calender', router)
+
+app.get('/', (req, res) => {
+   res.send("<h1>Hello World!</h1>");
+})
 
 const PORT = process.env.PORT || 8080;
 
@@ -28,4 +34,8 @@ mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopol
 
 
 
-mongoose.set() 
+// mongoose.set() 
+
+// app.listen(PORT, () => {
+//    console.log("App Listening on ", PORT);
+// });
