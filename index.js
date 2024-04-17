@@ -3,6 +3,9 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import router from './routes/route.js';
 import cors from 'cors';
+import qs from 'qs';
+import TokenDB_model from './models/token.js'
+import token_router from './routes/token_routes.js';
 
 const app = express();
 app.use(cors());
@@ -16,6 +19,7 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 
 app.use('/api/v1/calender', router)
+app.use('/api/v1/auth', token_router)
 
 app.get('/', (req, res) => {
    res.send("<h1>Hello World!</h1>");
